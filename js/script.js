@@ -3,17 +3,19 @@ import AccordionList from "./modules/accordion-list.js";
 import TabNav from "./modules/tab-nav.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
-import initScrollAnimation from "./modules/scroll-animation.js";
+import ScrollAnimation from "./modules/scroll-animation.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMobileMenu from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import fetchAnimais from "./modules/fetch-animais.js";
-import fetchBitcoin from "./modules/fetch-bitcoin.js";
+// import fetchBitcoin from "./modules/fetch-bitcoin.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="@"]');
 scrollSuave.init();
+
 const accordionList = new AccordionList('[data-anime="accordion"] dt');
 accordionList.init();
+
 const tabNav = new TabNav(
   '[data-tab="menu"] li',
   '[data-tab="content"] section'
@@ -26,11 +28,15 @@ const modal = new Modal(
   '[data-modal="container"]'
 );
 modal.init();
-initScrollAnimation();
+
+const scrollAnimation = new ScrollAnimation('[data-anime="scroll"]');
+scrollAnimation.init();
+
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
+
 initDropdownMenu();
 initMobileMenu();
 initFuncionamento();
 fetchAnimais("./animaisApi.json", ".numeros-grid");
-fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
+// fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
