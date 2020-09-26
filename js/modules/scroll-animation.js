@@ -1,11 +1,13 @@
+import debouncer from "./debouncer.js";
+
 export default class ScrollAnimation {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.windowMetade = window.innerHeight * 0.6;
 
-    this.checkDistance = this.checkDistance.bind(this);
+    this.checkDistance = debouncer(this.checkDistance.bind(this), 75);
   }
-  
+
   // Captura a distância em relação ao topo
   getDistance() {
     this.distance = [...this.sections].map((section) => {
@@ -20,6 +22,7 @@ export default class ScrollAnimation {
   // Verifica a distância em cada objeto
   // em relação ao scroll do site
   checkDistance() {
+    console.log("test");
     this.distance.forEach((item) => {
       if (window.pageYOffset > item.offset) {
         item.element.classList.add("ativo");
