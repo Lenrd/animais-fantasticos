@@ -5,6 +5,7 @@ export default class ScrollAnimation {
 
     this.checkDistance = this.checkDistance.bind(this);
   }
+  
   // Captura a distância em relação ao topo
   getDistance() {
     this.distance = [...this.sections].map((section) => {
