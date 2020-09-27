@@ -1,4 +1,5 @@
 node_modules
 anotacoes.js
 package-lock.json
+.vscode
 yarn.lock
