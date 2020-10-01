@@ -127,6 +127,8 @@ body {
 
 .animais-descricao {
   grid-column: 3;
+  overflow-y: scroll;
+  height: 350px;
 }
 
 .animais-descricao section {
@@ -135,6 +137,19 @@ body {
 
 .faq-lista {
   grid-column: 2 / 4;
+}
+.animais-descricao::-webkit-scrollbar {
+  width: 18px;
+}
+
+.animais-descricao::-webkit-scrollbar-thumb {
+  background: #fb5;
+  border-left: 4px solid #faf6ed;
+  border-right: 4px solid #faf6ed;
+}
+
+.animais-descricao::-webkit-scrollbar-track {
+  background: #faf6ed;
 }
 
 .faq-lista dt {
